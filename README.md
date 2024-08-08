@@ -13,7 +13,7 @@ poetry install
 
 # Usage
 
-Here's an example of how to use the Minds SDK:
+Here's an example of how to use the Minds SDK to create a Mind using DemoDatasource:
 
 ```python
 import uuid
