@@ -24,19 +24,8 @@ from minds.models import DataSourceConfig, ConnectionArgs
 MIND_API_KEY = "YOUR_API_KEY"
 client = Client(MIND_API_KEY)
 
-# use MindsDB's demo database
-data_source_config = DataSourceConfig(
-    type="postgres",
-    connection_args=ConnectionArgs(
-        user="demo_user",
-        password="demo_password",
-        host="samples.mindsdb.com",
-        port=5432,
-        database="demo",
-        schema="demo_data"
-    ),
-    description="house sales"
-)
+# use MindsDB's demo Datasource
+data_source_config = DemoDataSources.house_sales()
 
 # Create a new mind
 mind = client.mind.create(name=f'mind_{uuid.uuid4()}', data_source_configs=[data_source_config])
