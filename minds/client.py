@@ -22,7 +22,7 @@ class Client:
         if not self.api_key:
             raise ValueError("API key must be provided.")
         return {
-            "Content-Type": self.CONTENT_TYPE,
+            "Content-Type": 'application/json',
             "Authorization": f"Bearer {self.api_key}",
         }
 
