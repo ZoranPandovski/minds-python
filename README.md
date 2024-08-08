@@ -18,7 +18,7 @@ Here's an example of how to use the Minds SDK to create a Mind using DemoDatasou
 ```python
 import uuid
 from minds.client import Client
-from minds.models import DataSourceConfig, ConnectionArgs
+from minds.models import DemoDataSources
 
 # get your API_KEY from https://mdb.ai/minds
 MIND_API_KEY = "YOUR_API_KEY"
