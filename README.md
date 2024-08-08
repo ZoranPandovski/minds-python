@@ -31,8 +31,11 @@ data_source_config = DemoDataSources.house_sales()
 mind = client.mind.create(name=f'mind_{uuid.uuid4()}', data_source_configs=[data_source_config])
 
 print(f"{mind} was created successfully. You can now use this Mind using the OpenAI chat/completitions")
+```
 
+You can use OpenAI SDK to test the above Mind:
 
+```python
 from openai import OpenAI
 
 client = OpenAI(
