@@ -5,8 +5,8 @@ from .exceptions import MindsAPIError
 
 
 class Client:
-    BASE_URL = 'https://llm.mdb.ai'
-    
+    BASE_URL = "https://llm.mdb.ai"
+
     def __init__(self, api_key: str = None, base_url: str = BASE_URL):
         self.api_key = api_key
         self.base_url = base_url
@@ -22,8 +22,8 @@ class Client:
         if not self.api_key:
             raise ValueError("API key must be provided.")
         return {
-            'Content-Type': self.CONTENT_TYPE,
-            'Authorization': f'Bearer {self.api_key}'
+            "Content-Type": self.CONTENT_TYPE,
+            "Authorization": f"Bearer {self.api_key}",
         }
 
     def _request(self, method: str, endpoint: str, data: Optional[dict] = None):
@@ -44,5 +44,5 @@ class Client:
             raise MindsAPIError(f"HTTP error occurred: {http_err}")
         except Exception as err:
             raise MindsAPIError(f"An error occurred: {err}")
-        
+
         return response.json()
